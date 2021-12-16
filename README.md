@@ -4,14 +4,6 @@ This Repo utilised the work done by [Intelligent Quads](https://github.com/Intel
 
 This Repo is specifically designed to work with the Ardupilot control system, and utilizes the ardupilot gazebo plugin to allow the ardupilot control software to interface and control the model drone in gazebo. 
 
-## IQ Tutorials
-This Repo is part of the Intelligent Quads Software Development tutorial series. Please take a look at the following resources to learn more about how to use this repository.
-
-[Intelligent Quads Text Tutorials](https://github.com/Intelligent-Quads/iq_tutorials)
-
-[Intelligent Quads Video Tutorials](https://www.youtube.com/channel/UCuZy0c-uvSJglnZfQC0-uaQ)
-
-
 ## Dependencies [Ubuntu 20.04]
 
 Take a look at these tutorials to setup ardupilot, gazebo and the ardupilot gazebo plugin. 
@@ -44,6 +36,10 @@ roslaunch aerial rmuc.launch
 In another terminal, launch the ardupilot instance by running 
 ```
 cd ~/ardupilot/ArduCopter/ && sim_vehicle.py -v ArduCopter -f gazebo-iris --console
+``` 
+If sim_vehicle.py is not found, try
+``` 
+cd ~/ardupilot/Tools/autotest && python3 sim_vehicle.py -v ArduCopter -f gazebo-iris --console
 ``` 
 For more information, take a look at the corresponding tutorials [here](https://github.com/Intelligent-Quads/iq_tutorials)
 
