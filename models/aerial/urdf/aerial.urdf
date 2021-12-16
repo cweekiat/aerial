@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="aerial">
+  <link
+    name="quadcore">
+    <inertial>
+      <origin
+        xyz="0.009579 -0.0033492 -0.025285"
+        rpy="0 0 0" />
+      <mass
+        value="5.2815" />
+      <inertia
+        ixx="0.022733"
+        ixy="-3.0215E-05"
+        ixz="2.666E-05"
+        iyy="0.022153"
+        iyz="-5.9394E-05"
+        izz="0.034666" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://aerial/URDF/meshes/quadcore.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://aerial/URDF/meshes/quadcore.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="frontright">
+    <inertial>
+      <origin
+        xyz="-0.0016204 0.0016203 0.026192"
+        rpy="0 0 0" />
+      <mass
+        value="0.096663" />
+      <inertia
+        ixx="9.7821E-05"
+        ixy="0.00032002"
+        ixz="-0.00010319"
+        iyy="0.0013595"
+        iyz="2.5135E-05"
+        izz="0.0014378" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://aerial/URDF/meshes/frontright.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.92941 0.92941 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://aerial/URDF/meshes/frontright.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontrightlink"
+    type="continuous">
+    <origin
+      xyz="0.32947 -0.32948 0.078321"
+      rpy="0 0 0" />
+    <parent
+      link="quadcore" />
+    <child
+      link="frontright" />
+    <axis
+      xyz="-0.061628 0.061629 0.99619" />
+  </joint>
+  <link
+    name="frontleft">
+    <inertial>
+      <origin
+        xyz="-0.00086463 -0.00086464 0.013977"
+        rpy="0 0 0" />
+      <mass
+        value="0.096713" />
+      <inertia
+        ixx="0.00041278"
+        ixy="-0.00063121"
+        ixz="-0.000103"
+        iyy="0.0010477"
+        iyz="-6.3724E-05"
+        izz="0.0014362" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://aerial/URDF/meshes/frontleft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.92941 0.92941 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://aerial/URDF/meshes/frontleft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontleftlink"
+    type="continuous">
+    <origin
+      xyz="0.32872 0.32872 0.090436"
+      rpy="0 0 0" />
+    <parent
+      link="quadcore" />
+    <child
+      link="frontleft" />
+    <axis
+      xyz="-0.061629 -0.061628 0.99619" />
+  </joint>
+  <link
+    name="backleft">
+    <inertial>
+      <origin
+        xyz="0.0023096 -0.0023105 0.037348"
+        rpy="0 0 0" />
+      <mass
+        value="0.096653" />
+      <inertia
+        ixx="0.00015919"
+        ixy="-0.00042826"
+        ixz="5.3098E-05"
+        iyy="0.0012924"
+        iyz="1.7007E-05"
+        izz="0.0014435" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://aerial/URDF/meshes/backleft.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.92941 0.92941 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://aerial/URDF/meshes/backleft.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="backleftlink"
+    type="continuous">
+    <origin
+      xyz="-0.33016 0.33017 0.067064"
+      rpy="0 0 0" />
+    <parent
+      link="quadcore" />
+    <child
+      link="backleft" />
+    <axis
+      xyz="0.061628 -0.061629 0.99619" />
+  </joint>
+  <link
+    name="backright">
+    <inertial>
+      <origin
+        xyz="0.003428 0.0034264 0.055386"
+        rpy="0 0 0" />
+      <mass
+        value="0.096765" />
+      <inertia
+        ixx="1.9104E-05"
+        ixy="2.5228E-05"
+        ixz="8.6761E-05"
+        iyy="0.0014366"
+        iyz="-9.3025E-07"
+        izz="0.0014414" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://aerial/URDF/meshes/backright.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.92941 0.92941 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://aerial/URDF/meshes/backright.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="backrightlink"
+    type="continuous">
+    <origin
+      xyz="-0.33128 -0.33128 0.049128"
+      rpy="0 0 0" />
+    <parent
+      link="quadcore" />
+    <child
+      link="backright" />
+    <axis
+      xyz="0.061628 0.061628 0.99619" />
+  </joint>
+
+  <!-- IMU -->
+  <link name='quadcore/ground_truth/odometry_sensorgt_link'>
+    <inertial>
+      <!-- <origin
+        xyz="0 0 0" 
+        rpy="0 0 0" /> -->
+      <mass
+        value="0.0015" />
+      <inertia
+        ixx="0.0001"
+        ixy="0"
+        ixz="0"
+        iyy="0.0002"
+        iyz="0"
+        izz="0.0002" />
+    </inertial>
+  </link>
+  <joint 
+    name='quadcore/ground_truth/odometry_sensorgt_joint' 
+    type='continuous'>
+    <!-- <origin
+      xyz="0 0 0"
+      rpy="0 0 0" /> -->
+    <child link = "quadcore/ground_truth/odometry_sensorgt_link"/>
+    <parent link="quadcore"/>
+    <axis xyz ="0 0 1"/>
+    <!-- <dynamics damping="1.0"/> -->
+    <!-- <use_parent_model_frame value="1"/> -->
+    <!-- <physics>
+      <ode implicit_spring_damper ="1"/>
+    </physics> -->
+  </joint>
+  <link name='quadcore/imu_link'>
+    <inertial>
+      <!-- <origin
+        xyz="0 0 0" 
+        rpy="0 0 0" /> -->
+      <mass
+        value="0.0015" />
+      <inertia
+        ixx="0.00001"
+        ixy="0"
+        ixz="0"
+        iyy="0.00002"
+        iyz="0"
+        izz="0.00002" />
+    </inertial>
+    <sensor name="imu_sensor" type="imu">
+      <!-- <origin
+        xyz="0 0 0" 
+        rpy="3.14159 0 0" /> -->
+      <always_on value="1"/>
+      <update_rate value ="1"/>
+    </sensor>
+  </link>
+  <joint name='quadcore/imu_joint' type='continuous'>
+    <child link = "quadcore/imu_link"/>
+    <parent link="quadcore"/>
+    <axis xyz="0 0 1"/>
+      <!-- <limit>
+        <lower>0</lower>
+        <upper>0</upper>
+        <effort>0</effort>
+        <velocity>0</velocity>
+      </limit> 
+      <dynamics>
+        <damping>1.0</damping>
+      </dynamics>
+      <use_parent_model_frame>1</use_parent_model_frame>
+    </axis> -->
+    <!-- <physics>
+      <ode>
+        <implicit_spring_damper>1</implicit_spring_damper>
+      </ode>
+    </physics> -->
+    <!-- <dynamics
+      damping="1.0"/> -->
+  </joint>
+
+  <!-- Front Sonar Sensor -->
+  <!-- <link name="base_sonar_front">
+    <origin
+      xyz="0.18 0 0.2" 
+      rpy="0 0 0" />
+    <collision name="sonar_collision">
+      <geometry>
+        <box
+          size=".01 .01 .01"/>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <box
+          size=".01 .01 .01"/>
+        </box>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass
+        value="0.1" />
+      <inertia>
+        <ixx>0.001</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>0.001</iyy>
+        <iyz>0</iyz>
+        <izz>0.001</izz>
+      </inertia>
+    </inertial>
+    <sensor type="ray" name="sonar_sensor">
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+          <scan>
+            <horizontal>
+                <samples>10</samples>
+                <resolution>1</resolution> 
+                <min_angle>-0.14835</min_angle>
+                <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+                <samples>10</samples>
+                <resolution>1</resolution> 
+                <min_angle>-0.14835</min_angle>
+                <max_angle>0.14835</max_angle> 
+            </vertical>
+          </scan>
+          <range>
+            <min>0.06</min>
+            <max>7</max>
+            <resolution>0.02</resolution>
+          </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range_iq.so" name="gazebo_ros_range2">
+        <gaussianNoise>0.005</gaussianNoise>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>50</updateRate>
+        <topicName>/mavros/distance_sensor/front</topicName>
+        <frameName>base_sonar_front</frameName>
+        <radiation>INFRARED</radiation>
+        <fov>0.2967</fov>
+      </plugin>
+    </sensor>
+  </link>
+
+  <joint type="fixed" name="base_sonar_joint">
+    <pose>0 0 0 0 0 0</pose>
+    <parent>quadcore</parent>
+    <child>base_sonar_front</child>
+    <axis>
+      <limit>
+        <lower>0</lower>
+        <upper>0</upper>
+      </limit>
+      <xyz>0 0 1</xyz>
+      <use_parent_model_frame>true</use_parent_model_frame>
+    </axis>
+  </joint>   -->
+
+
+  <!-- LeftSonar Sensor -->
+  <!-- <link name="base_sonar_left">
+    <pose>0 0.18 .2 0 0 1.57</pose>
+    <collision name="sonar_collision">
+      <geometry>
+        <box>
+          <size>.01 .01 .01</size>
+        </box>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <box>
+          <size>0.01 0.01 0.01</size>
+        </box>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass>0.1</mass>
+      <inertia>
+        <ixx>0.001</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>0.001</iyy>
+        <iyz>0</iyz>
+        <izz>0.001</izz>
+      </inertia>
+    </inertial>
+    <sensor type="ray" name="sonar_sensor">
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+          <scan>
+            <horizontal>
+                <samples>10</samples>
+                <resolution>1</resolution> 
+                <min_angle>-0.14835</min_angle>
+                <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+                <samples>10</samples>
+                <resolution>1</resolution> 
+                <min_angle>-0.14835</min_angle>
+                <max_angle>0.14835</max_angle> 
+            </vertical>
+          </scan>
+          <range>
+            <min>0.06</min>
+            <max>7</max>
+            <resolution>0.02</resolution>
+          </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range_iq.so" name="gazebo_ros_range2">
+          <gaussianNoise>0.005</gaussianNoise>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>50</updateRate>
+          <topicName>/mavros/distance_sensor/left</topicName>
+          <frameName>base_sonar_left</frameName>
+          <radiation>INFRARED</radiation>
+          <fov>0.2967</fov>
+      </plugin>
+    </sensor>
+  </link>
+
+  
+  <joint type="fixed" name="base_sonar_joint_left">
+    <pose>0 0 0 0 0 0</pose>
+    <parent>quadcore</parent>
+    <child>base_sonar_left</child>
+    <axis>
+      <limit>
+        <lower>0</lower>
+        <upper>0</upper>
+      </limit>
+      <xyz>0 0 1</xyz>
+      <use_parent_model_frame>true</use_parent_model_frame>
+    </axis>
+  </joint>   -->
+
+
+  <!-- Right Sonar Sensor -->
+  <!-- <link name="base_sonar_right">
+    <pose>0 -0.18 .2 0 0 -1.57</pose>
+    <collision name="sonar_collision">
+      <geometry>
+        <box>
+          <size>.01 .01 .01</size>
+        </box>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <box>
+          <size>0.01 0.01 0.01</size>
+        </box>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass>0.1</mass>
+      <inertia>
+        <ixx>0.001</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>0.001</iyy>
+        <iyz>0</iyz>
+        <izz>0.001</izz>
+      </inertia>
+    </inertial>
+    <sensor type="ray" name="sonar_sensor">
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+          <scan>
+            <horizontal>
+                <samples>10</samples>
+                <resolution>1</resolution> 
+                <min_angle>-0.14835</min_angle>
+                <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+                <samples>10</samples>
+                <resolution>1</resolution> 
+                <min_angle>-0.14835</min_angle>
+                <max_angle>0.14835</max_angle> 
+            </vertical>
+          </scan>
+          <range>
+            <min>0.06</min>
+            <max>7</max>
+            <resolution>0.02</resolution>
+          </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range_iq.so" name="gazebo_ros_range2">
+          <gaussianNoise>0.005</gaussianNoise>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>50</updateRate>
+          <topicName>/mavros/distance_sensor/right</topicName>
+          <frameName>base_sonar_right</frameName>
+          <radiation>INFRARED</radiation>
+          <fov>0.2967</fov>
+      </plugin>
+    </sensor>
+  </link>
+
+  <joint type="fixed" name="base_sonar_joint_right">
+    <pose>0 0 0 0 0 0</pose>
+    <parent>quadcore</parent>
+    <child>base_sonar_right</child>
+    <axis>
+      <limit>
+        <lower>0</lower>
+        <upper>0</upper>
+      </limit>
+      <xyz>0 0 1</xyz>
+      <use_parent_model_frame>true</use_parent_model_frame>
+    </axis>
+  </joint>   -->
+
+
+  <!-- Back Sonar Sensor -->
+  <!-- <link name="base_sonar_back">
+    <pose>-0.18 0 0.2 0 0 3.14</pose>
+    <collision name="sonar_collision">
+      <geometry>
+        <box>
+          <size>.01 .01 .01</size>
+        </box>
+      </geometry>
+    </collision>
+    <visual name="visual">
+      <geometry>
+        <box>
+          <size>0.01 0.01 0.01</size>
+        </box>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass>0.1</mass>
+      <inertia>
+        <ixx>0.001</ixx>
+        <ixy>0</ixy>
+        <ixz>0</ixz>
+        <iyy>0.001</iyy>
+        <iyz>0</iyz>
+        <izz>0.001</izz>
+      </inertia>
+    </inertial>
+    <sensor type="ray" name="sonar_sensor">
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+          <scan>
+            <horizontal>
+                <samples>10</samples>
+                <resolution>1</resolution> 
+                <min_angle>-0.14835</min_angle>
+                <max_angle>0.14835</max_angle>
+            </horizontal>
+            <vertical>
+                <samples>10</samples>
+                <resolution>1</resolution> 
+                <min_angle>-0.14835</min_angle>
+                <max_angle>0.14835</max_angle> 
+            </vertical>
+          </scan>
+          <range>
+            <min>0.06</min>
+            <max>7</max>
+            <resolution>0.02</resolution>
+          </range>
+      </ray>
+      <plugin filename="libgazebo_ros_range_iq.so" name="gazebo_ros_range2">
+          <gaussianNoise>0.005</gaussianNoise>
+          <alwaysOn>true</alwaysOn>
+          <updateRate>50</updateRate>
+          <topicName>/mavros/distance_sensor/back</topicName>
+          <frameName>base_sonar_back</frameName>
+          <radiation>INFRARED</radiation>
+          <fov>0.2967</fov>
+      </plugin>
+    </sensor>
+  </link> -->
+  
+  <!-- <joint type="fixed" name="base_sonar_joint_back">
+    <pose>0 0 0 0 0 0</pose>
+    <parent>quadcore</parent>
+    <child>base_sonar_back</child>
+    <axis>
+      <limit>
+        <lower>0</lower>
+        <upper>0</upper>
+      </limit>
+      <xyz>0 0 1</xyz>
+      <use_parent_model_frame>true</use_parent_model_frame>
+    </axis>
+  </joint>      -->
+
+  <gazebo reference="quadcore">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="frontright">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="frontleft">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="backright">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="backleft">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
+  <gazebo> 
+    <!-- plugins -->
+    <plugin name="frontright" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>quadcore::frontright</link_name>
+    </plugin>
+    <!-- <plugin name="rotor_0_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>quadcore::frontright</link_name>
+    </plugin> -->
+
+    <plugin name="frontleft" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>quadcore::frontleft</link_name>
+    </plugin>
+    <!-- <plugin name="rotor_1_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>quadcore::frontleft</link_name>
+    </plugin> -->
+
+    <plugin name="backleft" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>quadcore::backleft</link_name>
+    </plugin>
+    <!-- <plugin name="rotor_2_blade_1" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>iris::rotor_2</link_name>
+    </plugin> -->
+
+    <plugin name="backright" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>quadcore::backright</link_name>
+    </plugin>
+    <!-- <plugin name="rotor_3_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>iris::rotor_3</link_name>
+    </plugin> -->
+
+    
+
+      <!--
+          incoming control command [0, 1]
+          so offset it by 0 to get [0, 1]
+          and divide max target by 1.
+          offset = 0
+          multiplier = 838 max rpm / 1 = 838
+        -->
+      <!--
+          Require by APM :
+          Only change model and gazebo from XYZ to XY-Z coordinates
+      -->
+
+    <plugin name="arducopter_plugin" filename="libArduPilotPlugin.so">
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <fdm_port_out>9003</fdm_port_out>
+
+      <modelXYZToAirplaneXForwardZDown>0 0 0 3.141593 0 0</modelXYZToAirplaneXForwardZDown>
+      <gazeboXYZToNED>0 0 0 3.141593 0 0</gazeboXYZToNED>
+      <imuName>quadcore::quadcore/imu_link::imu_sensor</imuName>
+      <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+      <control channel="0">
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>quadcore::frontright</jointName>
+        <multiplier>838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+      <control channel="1">
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max> 
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>quadcore::frontleft</jointName>
+        <multiplier>838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+      <control channel="2">
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>quadcore::backleft</jointName>
+        <multiplier>-838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+      <control channel="3">
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>quadcore::backright</jointName>
+        <multiplier>-838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+    </plugin>
+  </gazebo>
+
+</robot>

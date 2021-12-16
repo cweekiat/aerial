@@ -1,0 +1,154 @@
+<?xml version="1.0" ?>
+<robot name="aerial">
+  <joint name="aerial__backleftlink" type="revolute">
+    <parent link="aerial__quadcore"/>
+    <child link="aerial__backleft"/>
+    <origin xyz="-0.33016  0.33017  0.06706" rpy="0 0 0"/>
+    <axis xyz="0.06162 -0.06162  0.99619"/>
+    <limit lower="-1e+16" upper="1e+16" effort="0.0" velocity="0.0"/>
+  </joint>
+  <joint name="aerial__backrightlink" type="revolute">
+    <parent link="aerial__quadcore"/>
+    <child link="aerial__backright"/>
+    <origin xyz="-0.33128 -0.33128  0.04912" rpy="0 0 0"/>
+    <axis xyz="0.06162 0.06162 0.99619"/>
+    <limit lower="-1e+16" upper="1e+16" effort="0.0" velocity="0.0"/>
+  </joint>
+  <joint name="aerial__frontleftlink" type="revolute">
+    <parent link="aerial__quadcore"/>
+    <child link="aerial__frontleft"/>
+    <origin xyz="0.32872 0.32872 0.09043" rpy="0 0 0"/>
+    <axis xyz="-0.06162 -0.06162  0.99619"/>
+    <limit lower="-1e+16" upper="1e+16" effort="0.0" velocity="0.0"/>
+  </joint>
+  <joint name="aerial__frontrightlink" type="revolute">
+    <parent link="aerial__quadcore"/>
+    <child link="aerial__frontright"/>
+    <origin xyz="0.32947 -0.32948  0.07832" rpy="0 0 0"/>
+    <axis xyz="-0.06162  0.06162  0.99619"/>
+    <limit lower="-1e+16" upper="1e+16" effort="0.0" velocity="0.0"/>
+  </joint>
+  <joint name="aerial__aerial/ground_truth/odometry_sensorgt_joint" type="fixed">
+    <parent link="aerial__quadcore"/>
+    <child link="aerial__aerial/ground_truth/odometry_sensorgt_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
+  <joint name="aerial__aerial/imu_joint" type="fixed">
+    <parent link="aerial__quadcore"/>
+    <child link="aerial__aerial/imu_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0.0" upper="0.0" effort="0.0" velocity="0.0"/>
+  </joint>
+  <link name="aerial__quadcore">
+    <inertial>
+      <mass value="5.2815"/>
+      <origin xyz="0.00957 -0.00334 -0.02528" rpy="0 0 0"/>
+      <inertia ixx="0.022733" ixy="-3.0215e-05" ixz="2.666e-05" iyy="0.022153" iyz="-5.9394e-05" izz="0.034666"/>
+    </inertial>
+    <collision name="aerial__quadcore_collision">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://aerial/models/aerial/meshes/quadcore.STL" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual name="aerial__quadcore_visual">
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://aerial/models/aerial/meshes/quadcore.STL" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aerial__backleft">
+    <inertial>
+      <mass value="0.096653"/>
+      <origin xyz="0.00231 -0.00231  0.03734" rpy="0 0 0"/>
+      <inertia ixx="0.00015919" ixy="0.0" ixz="0" iyy="0.0012924" iyz="0" izz="0.0014435"/>
+    </inertial>
+    <collision name="aerial__backleft_collision">
+      <origin xyz="0.33016 -0.33017 -0.06706" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://aerial/models/aerial/meshes/backleft.STL" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual name="aerial__backleft_visual">
+      <origin xyz="0.33016 -0.33017 -0.06706" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://aerial/models/aerial/meshes/backleft.STL" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aerial__backright">
+    <inertial>
+      <mass value="0.096765"/>
+      <origin xyz="0.00342 0.00342 0.05538" rpy="0 0 0"/>
+      <inertia ixx="1.9104e-05" ixy="0" ixz="0" iyy="0.0014366" iyz="0" izz="0.0014414"/>
+    </inertial>
+    <collision name="aerial__backright_collision">
+      <origin xyz="0.33128  0.33128 -0.04912" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://aerial/models/aerial/meshes/backright.STL" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual name="aerial__backright_visual">
+      <origin xyz="0.33128  0.33128 -0.04912" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://aerial/models/aerial/meshes/backright.STL" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aerial__frontleft">
+    <inertial>
+      <mass value="0.096713"/>
+      <origin xyz="-0.00086 -0.00086  0.01397" rpy="0 0 0"/>
+      <inertia ixx="0.00041278" ixy="0" ixz="0" iyy="0.0010477" iyz="0" izz="0.0014362"/>
+    </inertial>
+    <collision name="aerial__frontleft_collision">
+      <origin xyz="-0.32872 -0.32872 -0.09043" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://aerial/models/aerial/meshes/frontleft.STL" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual name="aerial__frontleft_visual">
+      <origin xyz="-0.32872 -0.32872 -0.09043" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://aerial/models/aerial/meshes/frontleft.STL" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aerial__frontright">
+    <inertial>
+      <mass value="0.096663"/>
+      <origin xyz="-0.00162  0.00162  0.02619" rpy="0 0 0"/>
+      <inertia ixx="9.7821e-05" ixy="0" ixz="0" iyy="0.0013595" iyz="0" izz="0.0014378"/>
+    </inertial>
+    <collision name="aerial__frontright_collision">
+      <origin xyz="-0.32947  0.32948 -0.07832" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://aerial/models/aerial/meshes/frontright.STL" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <visual name="aerial__frontright_visual">
+      <origin xyz="-0.32947  0.32948 -0.07832" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://aerial/models/aerial/meshes/frontright.STL" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="aerial__aerial/ground_truth/odometry_sensorgt_link">
+    <inertial>
+      <mass value="0.15"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0002" iyz="0" izz="0.0002"/>
+    </inertial>
+  </link>
+  <link name="aerial__aerial/imu_link">
+    <inertial>
+      <mass value="0.15"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.00001" ixy="0" ixz="0" iyy="0.00002" iyz="0" izz="0.00002"/>
+    </inertial>
+  </link>
+</robot>

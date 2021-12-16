@@ -1,0 +1,592 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='aerial'>
+    <link name='quadcore'>
+      <inertial>
+        <pose>0.009579 -0.003349 -0.025285 0 -0 0</pose>
+        <mass>5.2815</mass>
+        <inertia>
+          <ixx>0.022733</ixx>
+          <ixy>-3.0215e-05</ixy>
+          <ixz>2.666e-05</ixz>
+          <iyy>0.022153</iyy>
+          <iyz>-5.9394e-05</iyz>
+          <izz>0.034666</izz>
+        </inertia>
+      </inertial>
+      <collision name='quadcore_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aerial/models/aerial/meshes/quadcore.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='quadcore_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aerial/models/aerial/meshes/quadcore.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Red</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='backleftlink' type='revolute'>
+      <pose relative_to='quadcore'>-0.33016 0.33017 0.067064 0 -0 0</pose>
+      <parent>quadcore</parent>
+      <child>backleft</child>
+      <axis>
+        <xyz>0.061628 -0.061629 0.99619</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <link name='backleft'>
+      <pose relative_to='backleftlink'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.00231 -0.002311 0.037348 0 -0 0</pose>
+        <mass>0.096653</mass>
+        <inertia>
+          <ixx>0.00015919</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0012924</iyy>
+          <iyz>0</iyz>
+          <izz>0.0014435</izz>
+        </inertia>
+      </inertial>
+      <collision name='backleft_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aerial/models/aerial/meshes/backleft.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='backleft_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aerial/models/aerial/meshes/backleft.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='backrightlink' type='revolute'>
+      <pose relative_to='quadcore'>-0.33128 -0.33128 0.049128 0 -0 0</pose>
+      <parent>quadcore</parent>
+      <child>backright</child>
+      <axis>
+        <xyz>0.061628 0.061628 0.99619</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <link name='backright'>
+      <pose relative_to='backrightlink'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.003428 0.003426 0.055386 0 -0 0</pose>
+        <mass>0.096765</mass>
+        <inertia>
+          <ixx>1.9104e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0014366</iyy>
+          <iyz>0</iyz>
+          <izz>0.0014414</izz>
+        </inertia>
+      </inertial>
+      <collision name='backright_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aerial/models/aerial/meshes/backright.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='backright_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aerial/models/aerial/meshes/backright.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='frontleftlink' type='revolute'>
+      <pose relative_to='quadcore'>0.32872 0.32872 0.090436 0 -0 0</pose>
+      <parent>quadcore</parent>
+      <child>frontleft</child>
+      <axis>
+        <xyz>-0.061629 -0.061628 0.99619</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <link name='frontleft'>
+      <pose relative_to='frontleftlink'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000865 -0.000865 0.013977 0 -0 0</pose>
+        <mass>0.096713</mass>
+        <inertia>
+          <ixx>0.00041278</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0010477</iyy>
+          <iyz>0</iyz>
+          <izz>0.0014362</izz>
+        </inertia>
+      </inertial>
+      <collision name='frontleft_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aerial/models/aerial/meshes/frontleft.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='frontleft_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aerial/models/aerial/meshes/frontleft.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='frontrightlink' type='revolute'>
+      <pose relative_to='quadcore'>0.32947 -0.32948 0.078321 0 -0 0</pose>
+      <parent>quadcore</parent>
+      <child>frontright</child>
+      <axis>
+        <xyz>-0.061628 0.061629 0.99619</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.004</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <link name='frontright'>
+      <pose relative_to='frontrightlink'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.00162 0.00162 0.026192 0 -0 0</pose>
+        <mass>0.096663</mass>
+        <inertia>
+          <ixx>9.7821e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0013595</iyy>
+          <iyz>0</iyz>
+          <izz>0.0014378</izz>
+        </inertia>
+      </inertial>
+      <collision name='frontright_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aerial/models/aerial/meshes/frontright.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='frontright_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://aerial/models/aerial/meshes/frontright.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Black</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+
+    <!-- IMU -->
+    <link name='aerial/ground_truth/odometry_sensorgt_link'>
+      <pose>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.15</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0002</iyy>
+          <iyz>0</iyz>
+          <izz>0.0002</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='aerial/ground_truth/odometry_sensorgt_joint' type='revolute'>
+      <child>aerial/ground_truth/odometry_sensorgt_link</child>
+      <parent>quadcore</parent>
+      <axis>250
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+    <link name='aerial/imu_link'>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.15</mass>
+        <inertia>
+          <ixx>0.00001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00002</iyy>
+          <iyz>0</iyz>
+          <izz>0.00002</izz>
+        </inertia>
+      </inertial>
+      <sensor name="imu_sensor" type="imu">
+        <pose>0 0 0 3.141593 0 0</pose>
+        <always_on>1</always_on>
+        <update_rate>1000.0</update_rate>
+      </sensor>
+    </link>
+    <joint name='aerial/imu_joint' type='revolute'>
+      <child>aerial/imu_link</child>
+      <parent>quadcore</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+
+    <!-- PLUGINS -->
+    <plugin name="frontright" filename="libLiftDragPlugin.so">
+      <a0>0.12217</a0>
+      <alpha_stall>0.370</alpha_stall>
+      <cla>5.418</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-2.1419</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.35</area>
+      <air_density>1.2041</air_density>
+      <cp>0.0 0 0</cp>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>frontright</link_name>
+    </plugin>
+    <!-- <plugin name="rotor_0_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>iris::rotor_0</link_name>
+    </plugin> -->
+
+    <plugin name="frontleft" filename="libLiftDragPlugin.so">
+      <a0>0.12217</a0>
+      <alpha_stall>0.370</alpha_stall>
+      <cla>5.418</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-2.1419</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.35</area>
+      <air_density>1.2041</air_density>
+      <cp>0.0 0 0</cp>
+      <forward>-1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>frontleft</link_name>
+    </plugin>
+    <!-- <plugin name="rotor_1_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 -1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>iris::rotor_1</link_name>
+    </plugin> -->
+
+    <plugin name="backleft" filename="libLiftDragPlugin.so">
+      <a0>0.12217</a0>
+      <alpha_stall>0.370</alpha_stall>
+      <cla>5.418</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-2.1419</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.35</area>
+      <air_density>1.2041</air_density>
+      <cp>0.0 0 0</cp>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>backleft</link_name>
+    </plugin>
+    <!-- <plugin name="rotor_2_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>iris::rotor_2</link_name>
+    </plugin> -->
+
+    <plugin name="backright" filename="libLiftDragPlugin.so">
+      <a0>0.12217</a0>
+      <alpha_stall>0.370</alpha_stall>
+      <cla>5.418</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-2.1419</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.35</area>
+      <air_density>1.2041</air_density>
+      <cp>0.0 0 0</cp>
+      <forward>-1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>backright</link_name>
+    </plugin>
+    <!-- <plugin name="rotor_3_blade_2" filename="libLiftDragPlugin.so">
+      <a0>0.3</a0>
+      <alpha_stall>1.4</alpha_stall>
+      <cla>4.2500</cla>
+      <cda>0.10</cda>
+      <cma>0.00</cma>
+      <cla_stall>-0.025</cla_stall>
+      <cda_stall>0.0</cda_stall>
+      <cma_stall>0.0</cma_stall>
+      <area>0.002</area>
+      <air_density>1.2041</air_density>
+      <cp>-0.084 0 0</cp>
+      <forward>0 1 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>iris::rotor_3</link_name>
+    </plugin> -->
+
+      <!--
+          Require by APM :
+          Only change model and gazebo from XYZ to XY-Z coordinates
+      -->
+      <!--
+          incoming control command [0, 1]
+          so offset it by 0 to get [0, 1]
+          and divide max target by 1.
+          offset = 0
+          multiplier = 838 max rpm / 1 = 838
+        -->
+    <plugin name="arducopter_plugin" filename="libArduPilotPlugin.so">
+      <fdm_addr>127.0.0.1</fdm_addr>
+      <fdm_port_in>9002</fdm_port_in>
+      <fdm_port_out>9003</fdm_port_out>
+
+      <modelXYZToAirplaneXForwardZDown>0 0 0 3.141593 0 0</modelXYZToAirplaneXForwardZDown>
+      <gazeboXYZToNED>0 0 0 3.141593 0 0</gazeboXYZToNED>
+      <imuName>imu_sensor</imuName>
+      <connectionTimeoutMaxCount>5</connectionTimeoutMaxCount>
+      <control channel="0">
+
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>frontrightlink</jointName>
+        <multiplier>1838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+      <control channel="1">
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>frontleftlink</jointName>
+        <multiplier>-1838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+      <control channel="2">
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>backleftlink</jointName>
+        <multiplier>1838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+      <control channel="3">
+        <type>VELOCITY</type>
+        <offset>0</offset>
+        <p_gain>0.20</p_gain>
+        <i_gain>0</i_gain>
+        <d_gain>0</d_gain>
+        <i_max>0</i_max>
+        <i_min>0</i_min>
+        <cmd_max>2.5</cmd_max>
+        <cmd_min>-2.5</cmd_min>
+        <jointName>backrightlink</jointName>
+        <multiplier>-1838</multiplier>
+        <controlVelocitySlowdownSim>1</controlVelocitySlowdownSim>
+      </control>
+    </plugin>
+
+  </model>
+</sdf>

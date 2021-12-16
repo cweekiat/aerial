@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding ="UTF-8"?>
+<launch>
+	<!-- <arg name="x" default="1"/>
+	<arg name="y" default="-1"/>
+	<arg name="z" default="0.4"/> -->
+
+
+
+  <!-- <param name="robot_description" command="$(find xacro)/xacro '$(find aerial)/URDF/urdf/aerial.urdf'"/>
+
+	<node name="aerial" pkg="gazebo_ros" type="spawn_model" output="screen" respawn="false"
+	args="-urdf -param robot_description -model aerial -x $(arg x) -y $(arg y) -z $(arg z)" /> -->
+<!-- 	
+	<arg name="fcu_url" default="udp://127.0.0.1:14551@14555" />
+	<arg name="gcs_url" default="" />
+	<arg name="tgt_system" default="1" />
+	<arg name="tgt_component" default="1" />
+	<arg name="log_output" default="screen" />
+	<arg name="respawn_mavros" default="true"/>
+	<arg name="mavros_ns" default="/"/>
+	<arg name="config_yaml" default="$(find mavros)/launch/apm_config.yaml" />
+	<param name="/mavros/conn/timesync_rate" value="0.0"/> -->
+
+
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="world_name" value="$(find aerial)/worlds/rmuc2.world"/>
+		<arg name="paused" value="false"/>
+		<arg name="use_sim_time" value="true"/>
+		<arg name="gui" value="true"/>
+		<arg name="recording" value="false"/>
+		<arg name="debug" value="false"/>
+
+	</include>
+<!-- 
+	<include file="$(find aerial)/launch/mavros_node.launch">
+		<arg name="pluginlists_yaml" value="$(find mavros)/launch/apm_pluginlists.yaml" />
+		<arg name="config_yaml" value="$(arg config_yaml)" />
+		<arg name="mavros_ns" value="$(arg mavros_ns)"/>
+		<arg name="fcu_url" value="$(arg fcu_url)" />
+		<arg name="gcs_url" value="$(arg gcs_url)" />
+		<arg name="respawn_mavros" value="$(arg respawn_mavros)"/>
+		<arg name="tgt_system" value="$(arg tgt_system)" />
+		<arg name="tgt_component" value="$(arg tgt_component)" />
+		<arg name="log_output" value="$(arg log_output)" />
+	</include> -->
+</launch>
