@@ -10,7 +10,7 @@ Take a look at these tutorials to setup ardupilot, gazebo and the ardupilot gaze
 
 1. [Install ROS and Setup Workspace](https://github.com/Intelligent-Quads/iq_tutorials/blob/master/docs/installing_ros_20_04.md)
 
-- I named my workspace as `ardupilot_ws`, so do watch for error if any directory is not found.
+- I named my workspace as `ardupilot_ws`, so do watch out for errors if any directory is not found.
 - Clone this repository for step 4 instead. 
 
 2. [Installing Gazebo and ArduPilot Plugin](https://github.com/Intelligent-Quads/iq_tutorials/blob/master/docs/installing_gazebo_arduplugin.md)
